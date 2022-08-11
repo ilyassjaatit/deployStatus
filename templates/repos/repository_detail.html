@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block bootstrap5_title %}{{ object.name }} {{ object.organization.name }}{% endblock  %}
+
+{% block title %}{{ object.name }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for pull_request in pullRequest %}
+            <div class="card mb-5">
+                <div class="card-body">
+                    <h5 class="card-title">{{ pull_request.title }}</h5>
+{#                    <a href="{% url 'repository-detail' repo.pk %}" class="btn btn-primary">See more</a>#}
+                </div>
+            </div>
+        {% empty %}
+            <div>No yet.</div>
+        {% endfor %}
+    </div>
+{% endblock %}

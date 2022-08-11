@@ -1,0 +1,15 @@
+PyGithub==1.55
+redis==4.3.4
+
+# celery
+celery==5.2.7
+
+# Django
+Django==4.0.3
+
+# Third part Django
+django-bootstrap-v5==1.0.11
+django-celery-beat==2.3.0
+
+# Debuger
+django-debug-toolbar==3.2.4

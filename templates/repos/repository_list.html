@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block bootstrap5_title %} Repost list{% endblock %}
+
+{% block title %}Repost list 2 {% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for repo in object_list %}
+            <div class="card mb-5">
+                <div class="card-body">
+                    <h5 class="card-title">{{ repo.name }}</h5>
+                    <p class="card-text">{{ repo.description }}</p>
+                    <a href="{% url 'repository-detail' repo.pk %}" class="btn btn-primary">See more</a>
+                </div>
+            </div>
+        {% empty %}
+            <div>No yet.</div>
+        {% endfor %}
+    </div>
+    {% bootstrap_pagination page_obj %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block bootstrap5_title %} Pull request  list{% endblock %}
+
+{% block title %}Pull request  list{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for pull in object_list %}
+            <div class="card mb-5">
+                <div class="card-body">
+                    <h5 class="card-title">{{ pull.title }}</h5>
+                    <p class="card-text">{{ pull.body }}</p>
+                    <a href="{% url 'repository-detail-pull-request-detail' pk=pull.repository.pk  pullrequest_pk=pull.pk %}" class="btn btn-primary">See more</a>
+                </div>
+            </div>
+        {% empty %}
+            <div>No yet.</div>
+        {% endfor %}
+    </div>
+    {% bootstrap_pagination page_obj %}
+{% endblock %}
