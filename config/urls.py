@@ -2,7 +2,10 @@
 """
 from django.contrib import admin
 from django.urls import path, include
+
+
 from apps.repos.views import *
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('repository/', RepositoryListView.as_view(), name="repository-list"),
@@ -13,4 +16,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Debug
     path('__debug__/', include('debug_toolbar.urls')),
+    path("api/", include("config.api_urls")),
+]
+
+
+# API URLS
+urlpatterns += [
+    path("auth-token/", obtain_auth_token),
 ]

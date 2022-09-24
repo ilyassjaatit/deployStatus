@@ -1,6 +1,7 @@
 from django.views import generic
 
 from .models import Repository, PullRequest
+from .tasks import get_users_github
 
 
 class RepositoryDetailView(generic.DetailView):
@@ -15,6 +16,11 @@ class RepositoryDetailView(generic.DetailView):
 class RepositoryListView(generic.ListView):
     model = Repository
     paginate_by = 6
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        get_users_github()
+        return context
 
 
 class PullrequestListView(generic.ListView):

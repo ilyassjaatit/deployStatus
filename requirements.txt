@@ -1,15 +1,18 @@
-PyGithub==1.55
-redis==4.3.4
+PyGithub
+redis
 
 # celery
-celery==5.2.7
+celery
 
 # Django
-Django==4.0.3
+Django
+
 
 # Third part Django
-django-bootstrap-v5==1.0.11
-django-celery-beat==2.3.0
+django-bootstrap-v5
+django-celery-beat
+djangorestframework
+django-cors-headers
 
 # Debuger
-django-debug-toolbar==3.2.4
+django-debug-toolbar

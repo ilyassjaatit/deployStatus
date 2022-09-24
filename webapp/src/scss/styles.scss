@@ -1,0 +1,23 @@
+//
+// Styles
+//
+
+// Import Custom Variables
+@import "variables.scss";
+
+// Import Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Import Custom SCSS
+@import "global";
+
+// Pages
+@import "pages/authentication";
+@import "pages/dashboard-fixed";
+
+
+// Navigation
+@import "navigation/nav";
+@import "navigation/topnav.scss";
+@import "navigation/sidenav/sidenav";
+@import "navigation/sidenav/sidenav-light";

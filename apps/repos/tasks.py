@@ -9,7 +9,7 @@ from apps.services.models import Deployment
 from config.celery import app
 
 User = get_user_model()
-GITHUB_TOKING = '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'
+GITHUB_TOKING = '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'
 STATE_PULLREQUEST_OPEN = 'open'
 STATE_PULLREQUEST_CLOSE = 'close'
 GITHUB_API_PAGINATION_LEN = 50
@@ -26,7 +26,8 @@ def get_users_github():
             for member in members:
                 User.objects.update_or_create(username=member.login,
                                               github_id=member.id,
-                                              github_username=member.login)
+                                              github_username=member.login,
+                                              )
         continue
 
 
